@@ -14,7 +14,7 @@ const data={
         },
         {
             name: 'CASIO INVERD',
-            slug: 'asdas',
+            slug: 'xxzc',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
@@ -26,7 +26,7 @@ const data={
         },
         {
             name: 'CASIO INVERD',
-            slug: 'asdas',
+            slug: 'zc',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
@@ -38,7 +38,7 @@ const data={
         },
         {
             name: 'CASIO INVERD',
-            slug: 'asdas',
+            slug: 'zxc',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,

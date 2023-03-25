@@ -2,7 +2,7 @@ const data={
     products: [
         {
             name: 'CASIO INVERD',
-            slug: 'asdas',
+            slug: 'sd',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
@@ -14,7 +14,7 @@ const data={
         },
         {
             name: 'CASIO INVERD',
-            slug: 'asdas',
+            slug: 'zxc',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
@@ -25,8 +25,8 @@ const data={
             description:'Hight quality',
         },
         {
-            name: 'CASIO INVERD',
-            slug: 'asdas',
+            name: 'CASadadO INVERD',
+            slug: 'scx',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
@@ -37,8 +37,8 @@ const data={
             description:'Hight quality',
         },
         {
-            name: 'CASIO INVERD',
-            slug: 'asdas',
+            name: 'CASasdsacvcvxIO INVERD',
+            slug: 'asdxxccas',
             category: 'Shirts',
             image:'/images/watch-6.jpg',
             price:120,
