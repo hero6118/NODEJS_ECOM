@@ -20,8 +20,8 @@ const data={
             price:120,
             countInStock: 10,
             brand:'CASIO',
-            rating:4.5,
-            numReviews:10,
+            rating:3,
+            numReviews:20,
             description:'Hight quality',
         },
         {
