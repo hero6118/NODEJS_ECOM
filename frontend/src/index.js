@@ -9,9 +9,7 @@ import reportWebVitals from './reportWebVitals';
 ReactDOM.render(
   <React.StrictMode>
     <App />
-    <HelmetProvider>
-      <App />
-    </HelmetProvider>
+    
   </React.StrictMode>,
   document.getElementById('root')
 );
