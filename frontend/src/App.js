@@ -14,6 +14,8 @@ import { Store } from './Store';
 import CartScreen from './screens/CartScreen';
 import SigninScreen from './screens/SigninScreen';
 import ShippingAddressScreen from './screens/ShippingAddressScreen';
+import SignupScreen from './screens/SignupScreen';
+import PaymentMethodScreen from './screens/PaymentMethodScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
@@ -22,6 +24,7 @@ function App() {
     ctxDispatch({ type: 'USER_SIGNOUT' });
     localStorage.removeItem('userInfo');
     localStorage.removeItem('shippingAddress');
+    localStorage.removeItem('paymentMethod');
   };
   return (
    <BrowserRouter>
@@ -36,7 +39,7 @@ function App() {
             </LinkContainer>
             <Nav className="me-auto">
                 <Link to="/cart" className="nav-link">
-                  Cart
+                  Giỏ hàng
                   {cart.cartItems.length > 0 && (
                     <Badge pill bg="danger">
                       {cart.cartItems.reduce((a, c) => a + c.quantity, 0)}
@@ -57,12 +60,12 @@ function App() {
                       to="#signout"
                       onClick={signoutHandler}
                     >
-                      Sign Out
+                      Đăng xuất
                     </Link>
                   </NavDropdown>
                 ) : (
                   <Link className="nav-link" to="/signin">
-                    Sign In
+                    Đăng nhập
                   </Link>
                 )}
               </Nav>
@@ -81,10 +84,13 @@ function App() {
         <Route path="/cart" element={<CartScreen />} />
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/signin" element={<SigninScreen />} />
+        <Route path="/signup" element={<SignupScreen />} />
         <Route
                 path="/shipping"
                 element={<ShippingAddressScreen />}
         ></Route>
+         <Route path="/payment" element={<PaymentMethodScreen />}></Route>
+         
        </Routes>
        </Container>
         </main>
