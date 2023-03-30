@@ -16,7 +16,7 @@ export default function ShippingAddressScreen() {
   const [fullName, setFullName] = useState(shippingAddress.fullName || '');
   const [address, setAddress] = useState(shippingAddress.address || '');
   const [city, setCity] = useState(shippingAddress.city || '');
-
+  const [phone, setPhone] = useState(shippingAddress.phone || '');
   useEffect(() => {
     if (!userInfo) {
       navigate('/signin?redirect=/shipping');
@@ -31,6 +31,7 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
+        phone,
         
       },
     });
@@ -40,6 +41,7 @@ export default function ShippingAddressScreen() {
         fullName,
         address,
         city,
+        phone,
         
       })
     );
@@ -79,7 +81,14 @@ export default function ShippingAddressScreen() {
               required
             />
           </Form.Group>
-        
+          <Form.Group className="mb-3" controlId="phone">
+            <Form.Label>Số điện thoại</Form.Label>
+            <Form.Control
+              value={phone}
+              onChange={(e) => setPhone(e.target.value)}
+              required
+            />
+          </Form.Group>
           <div className="mb-3">
             <Button variant="primary" type="submit">
               Tiếp tục
