@@ -20,13 +20,12 @@ import PlaceOrderScreen from './screens/PlaceOrderScreen';
 import OrderScreen from './screens/OrderScreen';
 import OrderHistoryScreen from './screens/OrderHistoryScreen';
 import ProfileScreen from './screens/ProfileScreen';
-<<<<<<< HEAD
 import Button from 'react-bootstrap/Button';
 import { getError } from './utils';
 import axios from 'axios';
 import SearchBox from './components/SearchBox';
-=======
->>>>>>> 0fd3581e935b7c9777838e43679f6c7daad13c75
+
+import SearchScreen from './screens/SearchScreen';
 function App() {
   const { state, dispatch: ctxDispatch } = useContext(Store);
   const { cart, userInfo } = state;
@@ -78,10 +77,7 @@ function App() {
            
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
               <Navbar.Collapse id="basic-navbar-nav">
-<<<<<<< HEAD
               <SearchBox />
-=======
->>>>>>> 0fd3581e935b7c9777838e43679f6c7daad13c75
                 <Nav className="me-auto  w-100  justify-content-end">
                   <Link to="/cart" className="nav-link">
                     Giỏ hàng
@@ -135,12 +131,15 @@ function App() {
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>
-                <LinkContainer
-                  to={`/search/category=${category}`}
+                  <LinkContainer
+                  to={{
+                    pathname: "/search", 
+                    search: `?category=${category}`,
+                  }}
                   onClick={() => setSidebarIsOpen(false)}
                 >
                   <Nav.Link>{category}</Nav.Link>
-                </LinkContainer>
+              </LinkContainer>
               </Nav.Item>
             ))}
           </Nav>
@@ -151,6 +150,7 @@ function App() {
        <Routes>
         <Route path="/product/:slug" element={<ProductScreen/>} />
         <Route path="/cart" element={<CartScreen />} />
+        <Route path="/search" element={<SearchScreen />} />
         <Route path="/" element={<HomeScreen/>}/>
         <Route path="/signin" element={<SigninScreen />} />
         <Route path="/signup" element={<SignupScreen />} />
