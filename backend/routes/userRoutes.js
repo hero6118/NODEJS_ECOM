@@ -23,7 +23,7 @@ userRouter.post(
         return;
       }
     }
-    res.status(401).send({ message: 'Invalid email or password' });
+    res.status(401).send({ message: 'Sai email hoặc mật khẩu' });
   })
 );
 userRouter.post(
@@ -65,7 +65,7 @@ userRouter.put(
         token: generateToken(updatedUser),
       });
     } else {
-      res.status(404).send({ message: 'User not found' });
+      res.status(404).send({ message: 'Không tìm thấy người dùng' });
     }
   })
 );

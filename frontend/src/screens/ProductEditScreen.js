@@ -107,7 +107,7 @@ export default function ProductEditScreen() {
       dispatch({
         type: 'UPDATE_SUCCESS',
       });
-      toast.success('Product updated successfully');
+      toast.success('sản phẩm đã được cập nhật thành công');
       navigate('/admin/products');
     } catch (err) {
       toast.error(getError(err));
@@ -128,7 +128,7 @@ export default function ProductEditScreen() {
       });
       dispatch({ type: 'UPLOAD_SUCCESS' });
 
-      toast.success('Image uploaded successfully');
+      toast.success('Hình đã đã được upload');
       setImage(data.secure_url);
     } catch (err) {
       toast.error(getError(err));
@@ -220,7 +220,7 @@ export default function ProductEditScreen() {
           </Form.Group>
           <div className="mb-3">
           <Button disabled={loadingUpdate} type="submit">
-              Update
+              Cập nhật
             </Button>
             {loadingUpdate && <LoadingBox></LoadingBox>}
           </div>

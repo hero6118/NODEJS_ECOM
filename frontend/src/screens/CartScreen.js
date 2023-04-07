@@ -20,7 +20,7 @@ export default function CartScreen() {
   const updateCartHandler = async (item, quantity) => {
     const { data } = await axios.get(`/api/products/${item._id}`);
     if (data.countInStock < quantity) {
-      window.alert('Sorry. Product is out of stock');
+      window.alert('xin lỗi, sản phẩm này đã hết hàng');
       return;
     }
     ctxDispatch({
@@ -47,7 +47,7 @@ export default function CartScreen() {
         <Col md={8}>
           {cartItems.length === 0 ? (
             <MessageBox>
-              Cart is empty. <Link to="/">Go Shopping</Link>
+             Giỏ hàng trống. <Link to="/">tiếp tục mua sắm</Link>
             </MessageBox>
           ) : (
             <ListGroup>
@@ -105,8 +105,8 @@ export default function CartScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <h3>
-                    Subtotal ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
-                    items) : $
+                    Tạm tính ({cartItems.reduce((a, c) => a + c.quantity, 0)}{' '}
+                     Sản phẩm) : $
                     {cartItems.reduce((a, c) => a + c.price * c.quantity, 0)}
                   </h3>
                 </ListGroup.Item>
@@ -118,7 +118,7 @@ export default function CartScreen() {
                       variant="primary"
                       disabled={cartItems.length === 0}
                     >
-                      Proceed to Checkout
+                      Tiếp tục thanh toán
                     </Button>
                   </div>
                 </ListGroup.Item>

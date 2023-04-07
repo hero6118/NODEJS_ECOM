@@ -120,13 +120,13 @@ function App() {
                         <NavDropdown.Item>Dashboard</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/products">
-                        <NavDropdown.Item>Products</NavDropdown.Item>
+                        <NavDropdown.Item>QL Sản phẩm</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/orders">
-                        <NavDropdown.Item>Orders</NavDropdown.Item>
+                        <NavDropdown.Item>QL Đơn hàng</NavDropdown.Item>
                       </LinkContainer>
                       <LinkContainer to="/admin/users">
-                        <NavDropdown.Item>Users</NavDropdown.Item>
+                        <NavDropdown.Item>QL người dùng</NavDropdown.Item>
                       </LinkContainer>
                     </NavDropdown>
                   )}
@@ -148,7 +148,7 @@ function App() {
         >
           <Nav className="flex-column text-white w-100 p-2">
             <Nav.Item>
-              <strong>Categories</strong>
+              <strong>Thể loại</strong>
             </Nav.Item>
             {categories.map((category) => (
               <Nav.Item key={category}>

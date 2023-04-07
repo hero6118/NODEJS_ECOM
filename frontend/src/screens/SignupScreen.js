@@ -25,7 +25,7 @@ export default function SignupScreen() {
   const submitHandler = async (e) => {
     e.preventDefault();
     if (password !== confirmPassword) {
-      toast.error('Passwords do not match');
+      toast.error('mật khẩu chưa khớp');
       return;
     }
     try {
@@ -51,9 +51,9 @@ export default function SignupScreen() {
   return (
     <Container className="small-container">
       <Helmet>
-        <title>Sign Up</title>
+        <title>Đăng ký</title>
       </Helmet>
-      <h1 className="my-3">Sign Up</h1>
+      <h1 className="my-3">Đăng ký</h1>
       <Form onSubmit={submitHandler}>
         <Form.Group className="mb-3" controlId="name">
           <Form.Label>Họ và tên</Form.Label>

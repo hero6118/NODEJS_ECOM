@@ -57,7 +57,7 @@ function ProductScreen() {
     const quantity = existItem ? existItem.quantity + 1 : 1;
     const { data } = await axios.get(`/api/products/${product._id}`);
     if (data.countInStock < quantity) {
-      window.alert('Sorry. Product is out of stock');
+      window.alert('xin lỗi, sản phẩm đã hết hàng');
       return;
     }
     ctxDispatch({
@@ -94,9 +94,9 @@ function ProductScreen() {
                 numReviews={product.numReviews}
               ></Rating>
             </ListGroup.Item>
-            <ListGroup.Item>Pirce : ${product.price}</ListGroup.Item>
+            <ListGroup.Item>Giá : ${product.price}</ListGroup.Item>
             <ListGroup.Item>
-              Description:
+              Mô tả:
               <p>{product.description}</p>
             </ListGroup.Item>
           </ListGroup>
@@ -107,18 +107,18 @@ function ProductScreen() {
               <ListGroup variant="flush">
                 <ListGroup.Item>
                   <Row>
-                    <Col>Price:</Col>
+                    <Col>Giá:</Col>
                     <Col>${product.price}</Col>
                   </Row>
                 </ListGroup.Item>
                 <ListGroup.Item>
                   <Row>
-                    <Col>Status:</Col>
+                    <Col>Tình trạng:</Col>
                     <Col>
                       {product.countInStock > 0 ? (
-                        <Badge bg="success">In Stock</Badge>
+                        <Badge bg="success">Còn hàng</Badge>
                       ) : (
-                        <Badge bg="danger">Unavailable</Badge>
+                        <Badge bg="danger">Hết hàng</Badge>
                       )}
                     </Col>
                   </Row>
@@ -128,7 +128,7 @@ function ProductScreen() {
                     <div className="d-grid">
                  
                       <Button onClick={addToCartHandler} variant="primary">
-                        Add to Cart
+                       Thêm vào giỏ hàng
                       </Button>
                     </div>
                   </ListGroup.Item>

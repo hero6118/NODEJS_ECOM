@@ -98,7 +98,7 @@ orderRouter.get(
     if (order) {
       res.send(order);
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Không tìm thấy đơn hàng' });
     }
   })
 );
@@ -128,7 +128,7 @@ orderRouter.put(
       await order.save();
       res.send({ message: 'Order Delivered' });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Không tìm thấy đơn hàng' });
     }
   })
 );
@@ -150,7 +150,7 @@ orderRouter.put(
       const updatedOrder = await order.save();
       res.send({ message: 'Order Paid', order: updatedOrder });
     } else {
-      res.status(404).send({ message: 'Order Not Found' });
+      res.status(404).send({ message: 'Không tìm thấy đơn hàng' });
     }
   })
 );

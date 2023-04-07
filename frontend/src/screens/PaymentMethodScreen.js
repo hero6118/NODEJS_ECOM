@@ -33,9 +33,9 @@ export default function PaymentMethodScreen() {
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
       <div className="container small-container">
         <Helmet>
-          <title>Phương thức trả tiền</title>
+          <title>Phương thức thanh toán</title>
         </Helmet>
-        <h1 className="my-3">Phương thức trả tiền</h1>
+        <h1 className="my-3">Phương thức thanh toán</h1>
         <Form onSubmit={submitHandler}>
           <div className="mb-3">
             <Form.Check

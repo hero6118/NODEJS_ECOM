@@ -28,7 +28,7 @@ productRouter.post(
       description: 'sample description',
     });
     const product = await newProduct.save();
-    res.send({ message: 'Product Created', product });
+    res.send({ message: 'Sản phẩm đã được tạo', product });
   })
 );
 productRouter.put(
@@ -48,9 +48,9 @@ productRouter.put(
       product.countInStock = req.body.countInStock;
       product.description = req.body.description;
       await product.save();
-      res.send({ message: 'Product Updated' });
+      res.send({ message: 'Sản phẩm đã được cập nhật' });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'Không tìm thấy sản phẩm' });
     }
   })
 );
@@ -63,9 +63,9 @@ productRouter.delete(
     const product = await Product.findById(req.params.id);
     if (product) {
       await product.deleteOne();
-      res.send({ message: 'Product Deleted' });
+      res.send({ message: 'Sản phẩm đã được xoá' });
     } else {
-      res.status(404).send({ message: 'Product Not Found' });
+      res.status(404).send({ message: 'không tìm thấy sản phẩm' });
     }
   })
 );
@@ -185,7 +185,7 @@ productRouter.get('/slug/:slug', async (req, res) => {
   if (product) {
     res.send(product);
   } else {
-    res.status(404).send({ message: 'Product Not Found' });
+    res.status(404).send({ message: 'Không tìm thấy sản phẩm' });
   }
 });
 productRouter.get('/:id', async (req, res) => {
@@ -193,7 +193,7 @@ productRouter.get('/:id', async (req, res) => {
   if (product) {
     res.send(product);
   } else {
-    res.status(404).send({ message: 'Product Not Found' });
+    res.status(404).send({ message: 'Không tìm thấy sản phẩm' });
   }
 });
 
